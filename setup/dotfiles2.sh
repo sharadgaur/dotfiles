@@ -3,17 +3,6 @@ source functions.sh
 
 
 dotfiles=(
-zsh
-bin
-aliases
-agignore
-gitconfig
-gitconfig.local
-gitmessage
-gvimrc
-tmux.conf
-zshenv
-zshrc
 vimrc.bundles
 vimrc
 vim

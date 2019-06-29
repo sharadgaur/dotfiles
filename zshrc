@@ -1,3 +1,84 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+#export PATH=$PATH:/opt/puppetlabs/bin:/usr/local/bin/okta-kube-token:/sharad/go/bin
+export GOPATH=/sharad/go
+#export GOROO=/usr/local/Cellar/go/1.12.5
+export PATH=$PATH:/opt/puppetlabs/bin:/usr/local/bin/okta-kube-token:/sharad/go/bin:/User/sguar/go/bin
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+export SPLUNK_HOME=/Applications/Splunk/
+alias orca="docker pull repo.splunk.com/splunk/products/orca:latest; \
+            docker run --rm -it --name orca -e USER=$USER \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            -v $HOME/.orca:/root/.orca \
+            -v $HOME/.ssh:/root/.ssh \
+            -v $HOME/.docker:/root/.docker \
+            -v \$(pwd -P):/orca-home repo.splunk.com/splunk/products/orca"
+alias ll="ls -ltr"
+alias gadd="git add -p"
+alias fixroute="sudo route delete default && sudo route add default -interface gpd0"
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/sguar/.oh-my-zsh"
+
+export GOPATH=/sharad/go
+ZSH_THEME="spaceship"
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+HYPHEN_INSENSITIVE="true"
+
+# Disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Enable command auto-correction.
+ENABLE_CORRECTION="true"
+
+# Display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Disable marking untracked files under VCS as dirty.
+# This makes repository status check for large repositories  much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Change the command execution timestamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+export NVM_LAZY_LOAD=true
+plugins=(
+  brew
+  docker
+  fast-syntax-highlighting
+  git
+  kubectl
+  npm
+  yarn
+  zsh-autosuggestions
+  zsh-better-npm-completion
+  zsh-nvm
+)
 # Setup for NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
@@ -147,3 +228,6 @@ export PATH=$BRAZIL_CLI_BIN:$PATH
 export PATH=$HOME/.toolbox/bin:$PATH
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
+  # Set Spaceship ZSH as a prompt
+  autoload -U promptinit; promptinit
+  prompt spaceship
