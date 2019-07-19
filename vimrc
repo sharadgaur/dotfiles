@@ -63,6 +63,8 @@ Plugin 'mxw/vim-jsx'
 Plugin 'jimmyhchan/dustjs.vim' "Highlighting for Dust
 Plugin 'elmcast/elm-vim' "Highlighting for Elm
 
+" Multiple cursors
+Plugin 'terryma/vim-multiple-cursors'
 " [6] Adds a ; at the end of a line by pressing <leader> ;
 Plugin 'lfilho/cosco.vim'
 
@@ -106,8 +108,6 @@ Plugin 'ternjs/tern_for_vim', {'do': 'npm install'}
 
 " Reads any .editorconfig files and sets spacing etc automatically
 Plugin 'editorconfig/editorconfig-vim'
-" Multiple cursors
-Plugin 'terryma/vim-multiple-cursors'
 
 
 """ TODO / Plugins to evaluate
@@ -133,7 +133,7 @@ filetype plugin indent on    " required
 " Put the rest of your .vimrc file here
 " Leader - ( Spacebar )
 let mapleader = " "
-
+set selection=inclusive
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
@@ -319,6 +319,8 @@ inoremap <S-Tab> <c-n>
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
+" Show history 
+nnoremap bro :browse oldfiles<CR>
 " AUTOCOMMANDS - Do stuff
 
 " Save whenever switching windows or leaving vim. This is useful when running
